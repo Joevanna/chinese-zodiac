@@ -1,0 +1,20 @@
+{
+  "name": "chinese-zodiac",
+  "version": "1.0.0",
+  "description": "small app to find out what is you animal in the chinese zodiac. Uses input and Sass mixin to position elements in circle. Fun!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joe Red",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat-css": "^2.2.0",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-sass": "^2.2.0"
+  }
+}
