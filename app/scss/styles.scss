@@ -64,7 +64,7 @@ body {
 
 
 .zodiac {
-  
+
 	.animals {
     width: 100%;
 		list-style: none;
@@ -81,34 +81,19 @@ body {
       margin: 0 25px;
       text-align: center;
       flex-grow: 1;
+			filter: sepia(1) blur(3px) ;
+      transition: all .3s ease-in-out;
 
       &:nth-of-type(0) { margin-left: 0; }
-      img { width: 130px; }
-      
+      img { width: 130px; transition: all .3s ease-in-out;}
+
 		}
 
-    li.selected { 
+    li.selected {
       filter: none;
       transform: scale(1.4);
       transform-origin: 50% 50%;
-      height: 100%;
-      flex-grow: 4;
+      & img { transform: rotate(360deg); }
       }
-
-		.inactive { 
-			filter: grayscale(100%);
-			 }
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

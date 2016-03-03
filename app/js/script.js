@@ -1,9 +1,10 @@
+var application = (function() {
+
 
 	var input = document.getElementById('js-input'),
-	button = document.getElementsByTagName('button'),
-	ul = document.querySelector('animals'),
-	lis = document.getElementsByTagName('li');
-
+		button = document.getElementsByTagName('button')[0],
+		ul = document.querySelector('animals'),
+		lis = document.querySelectorAll('li');
 
 	var animals = [
 			{
@@ -57,17 +58,40 @@
 		];
 
 	function submitValue() {
-		for (var i = 0; i < animals[i].years.length; i++) {
-			// console.log(animals[i]);
-			var animal = animals[i];
-			console.log(animal.years[i]);
-			for (var j = 0; j < animal.length; j++) {
-				console.log(animal.years[j]);
+		for (var i = 0; i < animals.length; i++) {
+			var dates = animals[i].years;
+			for (var j = 0; j < dates.length; j++) {
+				if (parseInt(input.value) === dates[j]) {
+					for (d = 0; d < lis.length; d++) {
+
+						if (lis[d].getAttribute('id') === animals[i].id) {
+							lis[d].classList.remove("selected");
+							lis[d].classList.add("selected");
+						}
+					}
+				}
 			}
 		}
 	}
 
+	function events() {
+		button.addEventListener('click', submitValue);
+
+	}
+
+	function init() {
+		events();
+	}
+
+	return {
+		init: init
+	}
+
+})();
 
 
+(function() {
 
-// console.log(lis.getAttribute('year'));
+	application.init();
+
+})();
