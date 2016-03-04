@@ -8,12 +8,12 @@ var gulp = require('gulp'),
 
 gulp.task('sass', function(){
   return gulp.src('app/scss/styles.scss')
-    .pipe(compass({      
+    .pipe(compass({
       css: 'app/css/',
       sass: 'app/scss/'
     }))
     .pipe(autoprefixer())
-    .pipe(sass()) // Converts Sass to CSS with gulp-sass
+    .pipe(sass({ noCache: true })) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('app/css/'))
     .pipe(browserSync.reload({
       stream: true
@@ -35,6 +35,6 @@ gulp.task('browserSync', function() {
 });
 
 gulp.task('watch',['browserSync', 'sass'], function(){
-  gulp.watch('app/scss/styles.scss', ['sass']); 
+  gulp.watch('app/scss/styles.scss', ['sass']);
   // Other watchers
 });

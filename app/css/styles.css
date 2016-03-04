@@ -30,7 +30,7 @@ body {
 .header {
   text-align: center;
   color: gold;
-  margin-top: 40px; }
+  margin: 40px 0; }
 
 .year-entry {
   display: -webkit-box;
@@ -79,6 +79,9 @@ body {
 .year-entry button:focus {
   outline: none; }
 
+.zodiac {
+  padding-top: 20px; }
+
 .zodiac .animals {
   width: 100%;
   list-style: none;
@@ -101,22 +104,29 @@ body {
   width: 130px;
   margin: 0 25px;
   text-align: center;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  -webkit-filter: sepia(1) blur(3px);
-  filter: sepia(1) blur(3px);
+  -webkit-filter: grayscale(1) blur(3px);
+  filter: grayscale(1) blur(3px);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out; }
 
 .zodiac .animals li:nth-of-type(0) {
   margin-left: 0; }
 
+.zodiac .animals li a {
+  text-decoration: none; }
+
 .zodiac .animals li img {
   width: 130px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out; }
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear; }
+
+.zodiac .animals li p {
+  color: gold;
+  font-weight: bold;
+  margin-bottom: 0;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out .3s;
+  transition: all .3s ease-in-out .3s; }
 
 .zodiac .animals li.selected {
   -webkit-filter: none;
@@ -129,3 +139,6 @@ body {
 .zodiac .animals li.selected img {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg); }
+
+.zodiac .animals li.selected p {
+  opacity: 1; }

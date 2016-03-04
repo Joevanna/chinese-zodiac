@@ -24,7 +24,8 @@ body {
 .header {
 	text-align: center;
 	color: gold;
-  margin-top: 40px;
+  margin: 40px 0;
+
 }
 
 .year-entry {
@@ -64,7 +65,7 @@ body {
 
 
 .zodiac {
-
+  padding-top: 20px;
 	.animals {
     width: 100%;
 		list-style: none;
@@ -80,13 +81,23 @@ body {
       width: 130px;
       margin: 0 25px;
       text-align: center;
-      flex-grow: 1;
-			filter: sepia(1) blur(3px) ;
+			filter: grayscale(1) blur(3px) ;
       transition: all .3s ease-in-out;
 
       &:nth-of-type(0) { margin-left: 0; }
-      img { width: 130px; transition: all .3s ease-in-out;}
 
+      a {
+        text-decoration: none;
+      }
+      img { width: 130px; transition: all .3s linear;}
+
+			p {
+				color: gold;
+        font-weight: bold;
+        margin-bottom: 0;
+        opacity: 0;
+        transition: all .3s ease-in-out .3s;
+			}
 		}
 
     li.selected {
@@ -94,6 +105,7 @@ body {
       transform: scale(1.4);
       transform-origin: 50% 50%;
       & img { transform: rotate(360deg); }
+      & p { opacity: 1; }
       }
 	}
 }

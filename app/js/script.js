@@ -57,7 +57,8 @@ var application = (function() {
 			}
 		];
 
-	function submitValue() {
+	function submitValue(e) {
+		e.preventDefault();
 		for (var i = 0; i < animals.length; i++) {
 			var dates = animals[i].years;
 			for (var j = 0; j < dates.length; j++) {
@@ -65,7 +66,6 @@ var application = (function() {
 					for (d = 0; d < lis.length; d++) {
 
 						if (lis[d].getAttribute('id') === animals[i].id) {
-							lis[d].classList.remove("selected");
 							lis[d].classList.add("selected");
 						}
 					}
@@ -74,9 +74,15 @@ var application = (function() {
 		}
 	}
 
+	// function onClearInput() {
+	// 	if (input.value = '') {
+	// 		lis.className = "";
+	// 	}
+	// }
+
 	function events() {
 		button.addEventListener('click', submitValue);
-
+		input.addEventListener('change', onClearInput);
 	}
 
 	function init() {
